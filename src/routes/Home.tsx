@@ -1,10 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import LogoBar from "../components/LogoBar";
-import { BiSearchAlt } from "react-icons/bi";
 import HomeGrid from "../components/homeGrid";
-import axios from "axios";
-import { Table } from "@mui/material";
-import { Link } from "react-router-dom";
 import Searchbar from "../components/searchBar";
 
 export default function Home() {

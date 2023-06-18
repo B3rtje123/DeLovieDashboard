@@ -5,7 +5,6 @@ import { RouterProvider } from 'react-router'
 import { createBrowserRouter } from 'react-router-dom'
 import Home from './routes/Home'
 import User from './routes/User'
-import Breadcrumbs from './components/breadCrumbs'
 
 
 const router = createBrowserRouter([

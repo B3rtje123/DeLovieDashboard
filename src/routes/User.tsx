@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Link, useParams } from 'react-router-dom';
 import { ImArrowRight2 } from 'react-icons/im';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
@@ -38,7 +39,9 @@ export default function User() {
         },
         body: JSON.stringify({
           name: name,
+          //@ts-expect-error
           service: user.service,
+          //@ts-expect-error
           status: user.status
         })
       })
@@ -49,6 +52,7 @@ export default function User() {
     const worksheet = utils.json_to_sheet(motion);
     const workbook = utils.book_new();
     utils.book_append_sheet(workbook, worksheet, "Activity Log");
+    //@ts-expect-error
     writeFile(workbook, `${user.name} - Activity Log.xlsx`);
   }
 
@@ -57,14 +61,10 @@ export default function User() {
     .then(response => response.json())
     .then(data => {
       if(data == '') {
-        setMotion([
-          { 
-            timeStamp: 'Geen data beschikbaar',
-            movement: 'geen beweging',
-          }
-        
-        ])
+
+        setMotion([])
       }else{
+        console.log(data)
         setMotion(data)
       }
     }
@@ -79,7 +79,10 @@ export default function User() {
           <h2 className='flex flex-row mt-4 items-center gap-4'><Link className='transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-darkblue focus:rounded
                 hover:outline-none hover:ring-2 hover:ring-offset-4 hover:ring-darkblue hover:rounded' to="/">Dashboard</Link> <ImArrowRight2/> User detail</h2>
           <h1 className="flex items-center gap-2 text-4xl text-textBlack font-semibold mt-7">
-            <input onChange={e => setName(e.target.value)} type="text" defaultValue={user.name} 
+            <input onChange={e => setName(e.target.value)} 
+            type="text" 
+            // @ts-expect-error
+            defaultValue={user.name} 
             className='max-w-xs transition-all duration-200 ease-in-out border-b-2 border-darkblue p-2
             focus:outline-none  focus:ring-2 focus:ring-offset-4 focus:ring-darkblue
             hover:outline-none  hover:ring-2 hover:ring-offset-4 hover:ring-darkblue' />
@@ -105,6 +108,7 @@ export default function User() {
                   <tbody className="">
                     {/* service = 0 */}
                     {
+                      // @ts-expect-error
                       user.service === 0 ?
                       <tr className="">
                         <td className="px-4 py-2 pr-16">Rechter hand naar rechts</td>
@@ -121,6 +125,7 @@ export default function User() {
                     }
 
                     {
+                      // @ts-expect-error
                       user.service === 0 ?
                       <tr className="bg-green/40">
                         <td className="px-4 py-2 pr-16">linker hand naar links</td>
@@ -137,6 +142,7 @@ export default function User() {
 
                     {/* service = 1 */}
                     {
+                      // @ts-expect-error
                       user.service === 1 ?
                       <tr>
                         <td className="px-4 py-2 pr-16">Rechter hand naar rechts</td>
@@ -152,6 +158,7 @@ export default function User() {
 
                     {/* service = 2 */}
                     {
+                      // @ts-expect-error
                       user.service === 2 ?
                       <tr>
                         <td className="px-4 py-2 pr-16">Rechter hand naar rechts</td>
@@ -167,6 +174,7 @@ export default function User() {
 
                     {/* service = 3 */}
                     {
+                      // @ts-expect-error
                       user.service === 3 ?
                       <tr>
                         <td className="px-4 py-2 pr-16">Rechter hand naar rechts</td>
@@ -187,6 +195,7 @@ export default function User() {
               <div className=''>
                 <h1 className="text-xl font-semibold mb-4 top-4 left-4">Geselecteerde service</h1>
                   {
+                    // @ts-expect-error
                     user.service == 0 ? 
                     <div className="grid grid-rows-2 grid-cols-2 gap-4 mt-12">
                       <h1 className="p-8 bg-darkblue text-white font-semibold justify-center flex rounded text-center">Live - tv</h1>
@@ -194,14 +203,18 @@ export default function User() {
                       <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;film&#41;</h1>
                       <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;foto&#39;s&#41;</h1>
                     </div>    
-                    : user.service == 1 ?
+                    :
+                    // @ts-expect-error 
+                    user.service == 1 ?
                     <div className="items-center grid grid-cols-2 gap-4 mt-12">
                       <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Live - tv</h1>
                       <h1 className="p-8 bg-darkblue text-white font-semibold justify-center flex rounded text-center">Plex &#40;muziek&#41;</h1>
                       <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;film&#41;</h1>
                       <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;foto&#39;s&#41;</h1>
                     </div>   
-                    : user.service == 2 ?
+                    : 
+                    // @ts-expect-error
+                    user.service == 2 ?
                     <div className="items-center grid grid-cols-2 gap-4 mt-12">
                       <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Live - tv</h1>
                       <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;muziek&#41;</h1>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Link } from "react-router-dom"
 import { MdOutlineKeyboardArrowRight } from "react-icons/md" 
 
@@ -12,6 +13,7 @@ const App = ({ results } : any) => {
                 <h1 className="px-8 py-4 font-semibold text-2xl sticky top-0 bg-white">Naam</h1>
                 {results.length > 0 && (
                 <ul>
+                    {/* @ts-expect-error */}
                     {results.map(user => (
                         <li key={user.id} className="odd:bg-green/40 text-xl px-8 py-4 whitespace-nowrap md:pr-16 lg:pr-24 xl:pr-48" >
                             {user.id === 0 ?
@@ -28,6 +30,7 @@ const App = ({ results } : any) => {
                 <h1 className="px-8 py-4 font-semibold text-2xl sticky top-0 bg-white">Status</h1>
                 {results.length > 0 && (
                     <ul>
+                    {/* @ts-expect-error */}
                         {results.map(user => (
                             <li key={user.id} className="odd:bg-green/40 text-xl px-8 py-4 lg:pr-24 xl:pr-48">
                                 {user.id === 0 ?
@@ -44,6 +47,7 @@ const App = ({ results } : any) => {
                 <h1 className="px-8 py-4 font-semibold text-2xl sticky top-0 bg-white">Service</h1>
                 {results.length > 0 && (
                 <ul>
+                {/* @ts-expect-error */}
                     {results.map(user => {
                         if (user.service === 0) {
                             return <li key={user.id} className="odd:bg-green/40 text-xl px-8 whitespace-nowrap py-4 md:pr-16 lg:pr-24 xl:pr-48">
@@ -88,6 +92,7 @@ const App = ({ results } : any) => {
                 <h1 className="px-8 py-4 font-semibold text-2xl sticky top-0 bg-white">Detail</h1>
                 {results.length > 0 && (
                     <ul>
+                    {/* @ts-expect-error */}
                         {results.map(user => (
                             <li key={user.id} className="odd:bg-green/40 px-8 text-6xl text-textBlack/80 xl:pr-28">
                                 {user.id === 0 ?

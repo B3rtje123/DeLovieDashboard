@@ -71,6 +71,15 @@ export default function User() {
     )
   }
 
+  const ServiceActiveStyle = (id : number) => {
+    // @ts-expect-error
+    if(id === user.service) {
+      return 'p-8 bg-darkblue text-white font-semibold justify-center flex rounded text-center'
+    }else{
+      return 'p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center'
+    }
+  }
+
   return (
     <main className="relative min-h-screen font-pop overflow-hidden ">
       <Link to={'/'}><FaArrowLeft className='text-4xl absolute left-8 top-8 md:left-12 lg:left-16 xl:left-20 2xl:left-64'/></Link>
@@ -194,41 +203,14 @@ export default function User() {
           <section className='mx-auto bg-cardGreen/40 max-w-xs p-4 max-h-min md:max-w-full'> 
             <div className=''>
               <h1 className="text-xl font-semibold mb-4 top-4 left-4">Geselecteerde service</h1>
-                {
-                  // @ts-expect-error
-                  user.service == 0 ? 
-                  <div className="grid grid-rows-2 grid-cols-2 gap-4 mt-12">
-                    <h1 className="p-8 bg-darkblue text-white font-semibold justify-center flex rounded text-center">Live - tv</h1>
-                    <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;muziek&#41;</h1>
-                    <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;film&#41;</h1>
-                    <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;foto&#39;s&#41;</h1>
-                  </div>    
-                  :
-                  // @ts-expect-error 
-                  user.service == 1 ?
-                  <div className="items-center grid grid-cols-2 gap-4 mt-12">
-                    <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Live - tv</h1>
-                    <h1 className="p-8 bg-darkblue text-white font-semibold justify-center flex rounded text-center">Plex &#40;muziek&#41;</h1>
-                    <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;film&#41;</h1>
-                    <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;foto&#39;s&#41;</h1>
-                  </div>   
-                  : 
-                  // @ts-expect-error
-                  user.service == 2 ?
-                  <div className="items-center grid grid-cols-2 gap-4 mt-12">
-                    <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Live - tv</h1>
-                    <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;muziek&#41;</h1>
-                    <h1 className="p-8 bg-darkblue text-white font-semibold justify-center flex rounded text-center">Plex &#40;film&#41;</h1>
-                    <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;foto&#39;s&#41;</h1>
-                  </div>   
-                  :
-                  <div className="items-center grid grid-cols-2 gap-4 mt-12">
-                    <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Live - tv</h1>
-                    <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;muziek&#41;</h1>
-                    <h1 className="p-8 whitespace-nowrap bg-darkblue/25 text-textBlack/75 justify-center flex font-semibold rounded text-center">Plex &#40;film&#41;</h1>
-                    <h1 className="p-8 bg-darkblue text-white font-semibold justify-center flex rounded text-center">Plex &#40;foto&#39;s&#41;</h1>
-                  </div>   
-                }
+                
+              <div className="grid grid-rows-2 grid-cols-2 gap-4 mt-12">
+                <h1 className={ServiceActiveStyle(0)}>Live - tv</h1>
+                <h1 className={ServiceActiveStyle(1)}>Plex &#40;muziek&#41;</h1>
+                <h1 className={ServiceActiveStyle(2)}>Plex &#40;film&#41;</h1>
+                <h1 className={ServiceActiveStyle(3)}>Plex &#40;foto&#39;s&#41;</h1>
+              </div>    
+                
             </div>
           </section> 
 

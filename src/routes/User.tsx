@@ -8,6 +8,7 @@ import DetailActivityLog from '../components/detailActivityLog';
 import { useEffect, useState } from 'react';
 import { utils, writeFile } from "xlsx";
 import { BiDownload } from 'react-icons/bi';
+import URL from '../components/url';
 
 export default function User() {
   const params = useParams()
@@ -15,8 +16,10 @@ export default function User() {
   const [motion, setMotion] = useState([])
   const [name, setName] = useState('')
 
+  // const url = `https://loviebackend03.azurewebsites.net`
+
   const fetchUserData = async () => {
-    await fetch(`https://loviebackend03.azurewebsites.net/users/${params.id}`)
+    await fetch(`${URL}/users/${params.id}`)
     .then(response => {
         return response.json()
     })
@@ -32,7 +35,7 @@ export default function User() {
   const nameUpdate = () => {
     if(name != '') {
       console.log(name)
-      fetch(`https://loviebackend03.azurewebsites.net/users/${params.id}`, {
+      fetch(`${URL}/users/${params.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -57,7 +60,7 @@ export default function User() {
   }
 
   const activity = async (  ) => {
-    await fetch(`https://loviebackend03.azurewebsites.net/activity/${params.id}`)
+    await fetch(`${URL}/activity/${params.id}`)
     .then(response => response.json())
     .then(data => {
       if(data == '') {

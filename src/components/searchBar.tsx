@@ -1,11 +1,12 @@
 import { BiSearchAlt } from "react-icons/bi";
 import { useEffect, useState } from "react";
+import URL from "../components/url";
 
 export default function Searchbar({setResults} : any) {
     const [input, setInput] = useState("");
 
     const fetchData = async  () => {
-        await fetch(`https://loviebackend03.azurewebsites.net/users`)
+        await fetch(`${URL}/users`)
         .then(response => response.json())
         .then(data => {
           setResults(data)
@@ -22,7 +23,7 @@ export default function Searchbar({setResults} : any) {
             fetchData()
         }
         else{
-            fetch(`https://loviebackend03.azurewebsites.net/users`)
+            fetch(`${URL}/users`)
             .then(response => response.json())
             .then(data => {
               const results = data.filter((user : any) => {

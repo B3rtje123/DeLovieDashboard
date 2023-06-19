@@ -14,7 +14,7 @@ export default (props:any) => {
                         counter++;
                         console.log(item)
                         return(
-                            <li key={counter} className="odd:bg-green/40 px-4 py-2 md:whitespace-nowrap md:pr-[6.75rem] lg:pr-[13.5rem]">{item.timeStamp}</li>
+                            <li key={counter} className="odd:bg-green/40 px-4 py-2 whitespace-nowrap md:pr-[6.75rem] lg:pr-[13.5rem]">{item.timeStamp}</li>
                     )})}
                 </ul>
                 }
@@ -26,7 +26,7 @@ export default (props:any) => {
                         {props.data.map((item : any) => {
                             counter++;
                             return(
-                            <li key={counter} className="odd:bg-green/40 px-4 py-2 md:whitespace-nowrap md:pr-[6.75rem] lg:pr-[13.5rem]">{item.movement}</li>
+                            <li key={counter} className="odd:bg-green/40 px-4 py-2 whitespace-nowrap md:pr-[6.75rem] lg:pr-[13.5rem]">{item.movement}</li>
                         )})}
                     </ul>
                 }

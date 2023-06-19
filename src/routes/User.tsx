@@ -78,7 +78,7 @@ export default function User() {
       <div className="max-w-sm md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto pb-8">
         <h2 className='flex flex-row mt-4 items-center gap-4'><Link className='transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-darkblue focus:rounded
               hover:outline-none hover:ring-2 hover:ring-offset-4 hover:ring-darkblue hover:rounded' to="/">Dashboard</Link> <ImArrowRight2/> User detail</h2>
-        <h1 className="flex items-center gap-2 text-4xl text-textBlack font-semibold mt-7">
+        <h1 className="flex items-center gap-4 text-4xl text-textBlack font-semibold mt-7">
           <input onChange={e => {setName(e.target.value);}} 
           type="text" 
           // @ts-expect-error

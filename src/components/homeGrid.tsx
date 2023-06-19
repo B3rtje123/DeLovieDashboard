@@ -7,7 +7,7 @@ const App = ({ results } : any) => {
   
     return (
         <section className="flex overflow-x-hidden max-w-sm mt-12
-        md:max-w-xl lg:max-w-screen-2xl lg:px-8 lg:max-h-[500px] lg:overflow-x-hidden lg:overflow-y-scroll
+        md:max-w-xl lg:max-w-screen-2xl lg:px-8 lg:max-h-96 lg:overflow-x-hidden lg:overflow-y-scroll
         ">  
             <div>
                 <h1 className="px-8 py-4 font-semibold text-2xl sticky top-0 bg-white">Naam</h1>

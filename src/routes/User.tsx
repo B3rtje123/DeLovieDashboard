@@ -191,7 +191,7 @@ export default function User() {
             </table>
           </section>
           
-          <section className='bg-cardGreen/40 max-w-xs p-4 max-h-min'> 
+          <section className='bg-cardGreen/40 max-w-xs p-4 max-h-min md:max-w-full'> 
             <div className=''>
               <h1 className="text-xl font-semibold mb-4 top-4 left-4">Geselecteerde service</h1>
                 {
@@ -232,7 +232,7 @@ export default function User() {
             </div>
           </section> 
 
-          <section className='max-w-xs mx-auto p-4 max-h-72 lg:col-span-2 bg-cardGreen/40'>
+          <section className='max-w-xs mx-auto p-4 max-h-72 lg:col-span-2 md:max-w-full bg-cardGreen/40'>
             <div className='flex items-center pb-4 gap-4'>
               <h1 className="text-xl font-semibold ">Activiteiten Log</h1>
               <button onClick={handleClick} className='text-md p-2 rounded transition-all ease-in-out duration-200 flex items-center gap-2 text-opacity-75 bg-lightblue bg-opacity-50

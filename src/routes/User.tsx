@@ -83,7 +83,7 @@ export default function User() {
             type="text" 
             // @ts-expect-error
             defaultValue={user.name} 
-            className='max-w-xs transition-all duration-200 ease-in-out border-b-2 border-darkblue p-2
+            className='max-w-[15rem] transition-all duration-200 ease-in-out border-b-2 border-darkblue p-2
             focus:outline-none  focus:ring-2 focus:ring-offset-4 focus:ring-darkblue
             hover:outline-none  hover:ring-2 hover:ring-offset-4 hover:ring-darkblue' />
             <button className='text-4xl p-4 transition-all duration-200 ease-in-out

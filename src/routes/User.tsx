@@ -191,7 +191,7 @@ export default function User() {
             </table>
           </section>
           
-          <section className='bg-cardGreen/40 max-w-xs p-4 max-h-min md:max-w-full'> 
+          <section className='mx-auto bg-cardGreen/40 max-w-xs p-4 max-h-min md:max-w-full'> 
             <div className=''>
               <h1 className="text-xl font-semibold mb-4 top-4 left-4">Geselecteerde service</h1>
                 {

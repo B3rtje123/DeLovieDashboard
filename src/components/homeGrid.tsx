@@ -96,9 +96,9 @@ const App = ({ results } : any) => {
                         {results.map(user => (
                             <li key={user.id} className="odd:bg-green/40 px-8 text-6xl text-textBlack/80 xl:pr-28">
                                 {user.id === 0 ?
-                                    <Link className='transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-darkblue focus:ring-offset-4 focus:ring-offset-lightblue' to={``}><MdOutlineKeyboardArrowRight /></Link>
+                                    <Link className='transition-all duration-200 ease-in-out' to={``}><MdOutlineKeyboardArrowRight /></Link>
                                     :
-                                    <Link className='transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-darkblue focus:ring-offset-4 focus:ring-offset-lightblue' to={`/user/${user.id}`}><MdOutlineKeyboardArrowRight /></Link>
+                                    <Link className='transition-all duration-200 ease-in-out' to={`/user/${user.id}`}><MdOutlineKeyboardArrowRight /></Link>
                                 }
                                 </li>
                         ))}
